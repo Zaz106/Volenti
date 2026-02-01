@@ -1,0 +1,158 @@
+.navbar {
+  width: 100%;
+  height: var(--navbar-height);
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar.transparent {
+  background-color: transparent;
+}
+
+.navbar.scrolled {
+  background-color: var(--color-primary);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Link Colors based on state */
+.transparent .navLink {
+  color: #ffffff;
+}
+
+.scrolled .navLink {
+  color: #ffffff;
+}
+
+.transparent .mobileButton {
+  color: #ffffff;
+}
+
+.scrolled .mobileButton {
+  color: #ffffff;
+}
+
+/* Logo Sizing */
+.logoLink {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 35; /* On top of menu */
+}
+
+.logo {
+  height: 2.5rem;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.desktopMenu {
+  display: none;
+}
+
+.navLink {
+  transition: color 0.2s ease;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.navLink:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.mobileButtonWrapper {
+  display: block;
+  position: relative;
+  z-index: 40; /* Highest */
+}
+
+.mobileButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobileDropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  min-height: fit-content;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: calc(var(--navbar-height) + 2rem) 2rem 2rem 2rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 20; /* Below Logo/Btn */
+
+  /* Transition properties */
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-100%); /* Slide from Top */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.mobileDropdown.open {
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mobileNavLink {
+  color: #ffffff;
+  padding: 1.5rem 0;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  transition: color 0.2s;
+}
+
+.mobileNavLink:hover {
+  color: var(--color-secondary);
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0 3rem;
+  }
+  
+  .logo {
+    height: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktopMenu {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .mobileButtonWrapper {
+    display: none;
+  }
+
+  .mobileDropdown, .mobileDropdown.open {
+    display: none;
+  }
+}

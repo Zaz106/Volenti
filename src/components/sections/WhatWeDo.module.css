@@ -1,0 +1,166 @@
+.section {
+  padding: 8rem 2rem;
+  background-color: rgba(255,255,255, 1); /* Beige */
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.heading {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .heading {
+    font-size: 5rem !important; /* Override inline or ID specificity if any */
+  }
+
+   .text {
+    max-width: 80% !important;
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 4rem !important;
+  }
+
+  .text {
+    max-width: 100% !important;
+    font-size: 1rem !important;
+  }
+}
+
+.text {
+  color: #000;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 50%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 3rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-height: 800px;
+  min-height: 300px;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.05);
+}
+
+.cardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.cardDesc {
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 1rem 3rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background-color: #00352bec;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 3rem;
+  }
+
+  .text {
+    font-size: 1rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .buttonGroup {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

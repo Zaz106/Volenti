@@ -1,0 +1,56 @@
+.section {
+  padding: 5rem 1.5rem;
+  background-color: var(--color-background);
+  text-align: center;
+  max-width: var(--spacing-container);
+  margin: 0 auto;
+}
+
+.heading {
+  color: #A9D26E; /* Light Green as per visual, or var(--color-secondary) */
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.text {
+  font-family: var(--font-body); /* Open Sans */
+  color: var(--color-text-main);
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 1rem 3rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 50px; /* Rounded pill shape */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  background-color: var(--color-background-alt); /* Beige */
+  color: var(--color-text-main);
+}
+
+.subtext {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-main);
+}

@@ -1,0 +1,114 @@
+.section {
+  background-color: var(--color-background-alt); /* Light Beige */
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.container {
+  max-width: var(--spacing-container);
+  margin: 0 auto;
+}
+
+.heading {
+  color: var(--color-accent); /* Orange */
+  font-family: var(--font-heading);
+  font-size: var(--text-h1);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.description {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background-color: var(--color-primary); /* Dark Green */
+  color: var(--color-text-light);
+  padding: 2rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  margin-bottom: 1rem;
+   /* If the logo image is dark, filter it to be light green or white if needed, 
+      but assuming png is correct color */
+}
+
+.cardTitle {
+  color: var(--color-accent); /* Orange */
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  min-height: 3em; /* Align titles */
+  display: flex;
+  align-items: flex-end; /* Align bottom */
+  justify-content: center;
+}
+
+.cardList {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  padding-left: 1.2rem;
+  flex-grow: 1; /* Push ROI to bottom */
+}
+
+.cardList li {
+  margin-bottom: 0.5rem;
+}
+
+.roiSection {
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+}
+
+.roiTitle {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.roiText {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  opacity: 0.9;
+}
