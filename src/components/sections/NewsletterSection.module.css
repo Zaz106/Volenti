@@ -41,7 +41,7 @@ input:-webkit-autofill:active{
   max-width: 600px;
   border: 1px solid #ccc; /* Or light grey */
   border-radius: 9999px;
-  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  padding: 0.3rem 0.3rem 0.3rem 2rem;
   margin-bottom: 1rem;
 }
 

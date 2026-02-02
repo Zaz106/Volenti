@@ -3,7 +3,7 @@
   width: 100%;
   height: 100vh;
   min-height: 100vh;
-  background-image: url('/Lady-stretching.png');
+  background-image: url('/Lady-stretching.webp');
   background-size: cover;
   background-position: center;
   padding: 0 2rem 2rem 2rem; /* Remove top padding to push content up, keep sides/bottom */
@@ -85,7 +85,7 @@
   height: 40px;
   background-color: #a8d26e50; /* Very light green placeholder */
   border-radius: 4px;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .cardTitle {
@@ -140,6 +140,10 @@
   .intro {
     font-size: 1rem;
     max-width: 100%;
+  }
+
+  .cardIcon {
+    margin-bottom: 2rem;
   }
 
   /* Cards stack by default (1fr) */
