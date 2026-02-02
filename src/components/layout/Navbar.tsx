@@ -57,14 +57,24 @@ const Navbar: React.FC = () => {
 
   // Update theme-color for iOS status bar
   useEffect(() => {
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    if (metaThemeColor) {
-      // If scrolled or menu is open -> Green (primary), else -> Black (transparent over video)
-      if (isScrolled || isOpen) {
-        metaThemeColor.setAttribute('content', '#00352B');
-      } else {
-        metaThemeColor.setAttribute('content', '#000000'); 
+    // Helper to robustly set the content
+    const setMetaThemeColor = (color: string) => {
+      let meta = document.querySelector('meta[name="theme-color"]');
+      if (!meta) {
+        // Fallback if not found (though layout.tsx should render it)
+        meta = document.createElement('meta');
+        meta.setAttribute('name', 'theme-color');
+        document.head.appendChild(meta);
       }
+      if (meta.getAttribute('content') !== color) {
+        meta.setAttribute('content', color);
+      }
+    };
+
+    if (isScrolled || isOpen) {
+      setMetaThemeColor('#00352B');
+    } else {
+      setMetaThemeColor('#000000');
     }
   }, [isScrolled, isOpen]);
 
