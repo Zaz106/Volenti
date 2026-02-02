@@ -65,7 +65,8 @@ input:-webkit-autofill:active{
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .button:hover {

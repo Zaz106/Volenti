@@ -11,11 +11,12 @@
 
 .backgroundText {
   position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: -10%;
+  left: 0;
+  width: 100%;
+  text-align: center;
   font-family: var(--font-heading);
-  font-size: 20vw;
+    font-size: 50vh;
   font-weight: 900;
   color: rgba(255, 255, 255, 0.03); /* Very subtle white opacity */
   white-space: nowrap;
@@ -23,31 +24,42 @@
   z-index: 1;
   text-transform: uppercase;
   letter-spacing: -0.05em;
-  /* Ensure it doesn't shift on mobile */
-  bottom: auto;
+  line-height: 1;
 }
 
-@media (max-width: 768px) {
-  /* Keep background text near bottom but perhaps adjust translate if needed */
-  /* Or if top 80% is the goal, ensure container height is sufficient */
+@media (max-width: 1024px) {
   .backgroundText {
-     top: 80%; /* Slight adjustment for mobile if needed to push it lower */
+    bottom: -5%;
+    font-size: 30vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .backgroundText {
+    bottom: -5%;
+    font-size: 25vh;
   }
 }
 
 @media (max-width: 768px) {
-  /* Keep background text near bottom but perhaps adjust translate if needed */
-  /* Or if top 80% is the goal, ensure container height is sufficient */
   .backgroundText {
-     top: 85%; /* Slight adjustment for mobile if needed to push it lower */
+    bottom: -4%;
+    font-size: 18vh;
   }
 }
+
 
 @media (max-width: 600px) {
-  /* Keep background text near bottom but perhaps adjust translate if needed */
-  /* Or if top 80% is the goal, ensure container height is sufficient */
   .backgroundText {
-     top: 92%; /* Slight adjustment for mobile if needed to push it lower */
+    bottom: -3%;
+    font-size: 15vh;
+  }
+}
+
+@media (max-width: 420px) {
+  .backgroundText {
+    bottom: -1.5%;
+    font-size: 11.5vh;
   }
 }
 
@@ -95,11 +107,12 @@
   color: var(--color-primary);
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
   padding: 1rem 3rem;
   border-radius: 9999px;
   cursor: pointer;
   transition: all 0.2s ease;
+  letter-spacing: -0.02em;
 }
 
 .button:hover {
@@ -111,10 +124,11 @@
     padding: 6rem 2rem;
   }
 
-  .heading, .highlight {
+  .heading,
+  .highlight {
     font-size: 5rem;
   }
-  
+
   .text {
     max-width: 80%;
   }
@@ -125,10 +139,11 @@
     padding: 4rem 1.5rem;
   }
 
-  .heading, .highlight {
+  .heading,
+  .highlight {
     font-size: 4rem;
   }
-  
+
   .text {
     font-size: 1rem;
     max-width: 100%;
