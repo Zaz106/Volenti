@@ -55,6 +55,19 @@ const Navbar: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Update theme-color for iOS status bar
+  useEffect(() => {
+    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+    if (metaThemeColor) {
+      // If scrolled or menu is open -> Green (primary), else -> Black (transparent over video)
+      if (isScrolled || isOpen) {
+        metaThemeColor.setAttribute('content', '#00352B');
+      } else {
+        metaThemeColor.setAttribute('content', '#000000'); 
+      }
+    }
+  }, [isScrolled, isOpen]);
+
   const navItems = [
     { label: "Home", href: "/" },
     { label: "What We Do", href: "/#what-we-do" },

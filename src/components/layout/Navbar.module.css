@@ -101,7 +101,6 @@
   justify-content: flex-start;
   align-items: center;
   padding: calc(var(--navbar-height) + 2rem) 2rem 2rem 2rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   z-index: 20; /* Below Logo/Btn */
 
   /* Transition properties */
