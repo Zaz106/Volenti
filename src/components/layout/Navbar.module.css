@@ -17,7 +17,7 @@
 }
 
 .navbar.transparent {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
   padding-top: max(env(safe-area-inset-top), 0px); /* Respect safe area if needed, though top:0 usually covers it */
 }
 
