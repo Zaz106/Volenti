@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import styles from './Navbar.module.css';
-import Logo from './Logo';
+import React, { useState, useEffect } from "react";
+import styles from "./Navbar.module.css";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Change state when scrolled more than 50px
       if (currentScrollY > 50) {
         setIsScrolled(true);
@@ -25,24 +25,24 @@ const Navbar: React.FC = () => {
 
       // Hide/Show Logic
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-         // Scrolling Down -> Hide
-         setIsVisible(false);
+        // Scrolling Down -> Hide
+        setIsVisible(false);
       } else {
-         // Scrolling Up -> Show
-         setIsVisible(true);
+        // Scrolling Up -> Show
+        setIsVisible(true);
       }
-      
+
       lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        dropdownRef.current && 
+        dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node) &&
         buttonRef.current &&
         !buttonRef.current.contains(event.target as Node)
@@ -51,30 +51,37 @@ const Navbar: React.FC = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Update theme-color for iOS status bar
   useEffect(() => {
     // Helper to robustly set the content
-    const setMetaThemeColor = (color: string) => {
-      let meta = document.querySelector('meta[name="theme-color"]');
-      if (!meta) {
-        // Fallback if not found (though layout.tsx should render it)
-        meta = document.createElement('meta');
-        meta.setAttribute('name', 'theme-color');
+    const updateThemeColor = (color: string) => {
+      // Find all existing theme-color meta tags
+      const metas = document.querySelectorAll('meta[name="theme-color"]');
+
+      if (metas.length === 0) {
+        // Create one if none exist
+        const meta = document.createElement("meta");
+        meta.setAttribute("name", "theme-color");
+        meta.setAttribute("content", color);
         document.head.appendChild(meta);
-      }
-      if (meta.getAttribute('content') !== color) {
-        meta.setAttribute('content', color);
+      } else {
+        // Update all existing tags to avoid conflicts
+        metas.forEach((meta) => {
+          if (meta.getAttribute("content") !== color) {
+            meta.setAttribute("content", color);
+          }
+        });
       }
     };
 
     if (isScrolled || isOpen) {
-      setMetaThemeColor('#00352B');
+      updateThemeColor("#00352B");
     } else {
-      setMetaThemeColor('#000000');
+      updateThemeColor("#000000");
     }
   }, [isScrolled, isOpen]);
 
@@ -84,20 +91,20 @@ const Navbar: React.FC = () => {
     { label: "Workshops", href: "/pages/workshops" },
     { label: "Pricing", href: "#pricing" },
     { label: "Weight Loss Challenge", href: "/#weight-loss-challenge" },
-    { label: "Contact us", href: "#contact-us" }
+    { label: "Contact us", href: "#contact-us" },
   ];
 
   return (
-    <nav 
-      className={`${styles.navbar} ${(isScrolled || isOpen) ? styles.scrolled : styles.transparent} ${!isVisible && !isOpen ? styles.hidden : ''}`}
+    <nav
+      className={`${styles.navbar} ${isScrolled || isOpen ? styles.scrolled : styles.transparent} ${!isVisible && !isOpen ? styles.hidden : ""}`}
     >
       <a href="/" className={styles.logoLink}>
-        <Logo 
-          color={isScrolled || isOpen ? 'var(--color-secondary)' : 'white'} 
-          className={styles.logo} 
+        <Logo
+          color={isScrolled || isOpen ? "var(--color-secondary)" : "white"}
+          className={styles.logo}
         />
       </a>
-      
+
       {/* Desktop Menu */}
       <div className={styles.desktopMenu}>
         {navItems.map((item) => (
@@ -109,35 +116,45 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Button - Ensure z-index high */}
       <div className={styles.mobileButtonWrapper}>
-        <button 
+        <button
           ref={buttonRef}
-          onClick={() => setIsOpen(!isOpen)} 
+          onClick={() => setIsOpen(!isOpen)}
           className={styles.mobileButton}
           aria-label="Toggle menu"
         >
-          <svg 
-            className={styles.mobileIcon} 
-            fill="none" 
-            stroke="currentColor" 
+          <svg
+            className={styles.mobileIcon}
+            fill="none"
+            stroke="currentColor"
             viewBox="0 0 24 24"
           >
             {isOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             )}
           </svg>
         </button>
       </div>
 
       {/* Mobile Menu Slide-in from Right */}
-      <div 
+      <div
         ref={dropdownRef}
-        className={`${styles.mobileDropdown} ${isOpen ? styles.open : ''}`}
+        className={`${styles.mobileDropdown} ${isOpen ? styles.open : ""}`}
       >
         {navItems.map((item) => (
-          <a 
-            key={item.label} 
+          <a
+            key={item.label}
             href={item.href}
             className={styles.mobileNavLink}
             onClick={() => setIsOpen(false)}
@@ -149,6 +166,5 @@ const Navbar: React.FC = () => {
     </nav>
   );
 };
-
 
 export default Navbar;
