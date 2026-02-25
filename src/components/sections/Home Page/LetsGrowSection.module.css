@@ -2,65 +2,15 @@
   position: relative;
   width: 100%;
   background-color: var(--color-primary);
+  background-image: url("/Volenti-background-logo.png");
+  background-size: 100% auto;
+  background-position: center bottom;
+  background-repeat: no-repeat;
   padding: 8rem 2rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.backgroundText {
-  position: absolute;
-  bottom: -10%;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  font-family: var(--font-heading);
-    font-size: 50vh;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.03); /* Very subtle white opacity */
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 1;
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
-  line-height: 1;
-}
-
-@media (max-width: 1024px) {
-  .backgroundText {
-    bottom: -5%;
-    font-size: 30vh;
-  }
-}
-
-@media (max-width: 900px) {
-  .backgroundText {
-    bottom: -5%;
-    font-size: 25vh;
-  }
-}
-
-@media (max-width: 768px) {
-  .backgroundText {
-    bottom: -4%;
-    font-size: 18vh;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .backgroundText {
-    bottom: -3%;
-    font-size: 15vh;
-  }
-}
-
-@media (max-width: 420px) {
-  .backgroundText {
-    bottom: -1.5%;
-    font-size: 11.5vh;
-  }
 }
 
 .container {

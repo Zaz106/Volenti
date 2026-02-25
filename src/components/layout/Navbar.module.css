@@ -9,7 +9,10 @@
   top: 0;
   left: 0;
   z-index: 1000;
-  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition:
+    background-color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
 }
 
 .navbar.hidden {
@@ -17,7 +20,11 @@
 }
 
 .navbar.transparent {
-  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .navbar.scrolled {
@@ -119,9 +126,8 @@
 .mobileNavLink {
   color: #ffffff;
   padding: 1.5rem 0;
-  text-transform: uppercase;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   font-family: var(--font-heading);
   transition: color 0.2s;
 }
@@ -134,7 +140,7 @@
   .navbar {
     padding: 0 3rem;
   }
-  
+
   .logo {
     height: 3rem;
   }
@@ -150,7 +156,8 @@
     display: none;
   }
 
-  .mobileDropdown, .mobileDropdown.open {
+  .mobileDropdown,
+  .mobileDropdown.open {
     display: none;
   }
 }
