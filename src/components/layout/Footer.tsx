@@ -14,10 +14,9 @@ const Footer: React.FC = () => {
             </div>
             <nav className={styles.navLinks}>
               <a href="/">Home</a>
-              <a href="#about">About Us</a>
-              <a href="#what-we-do">What We Do</a>
+              <a href="/#what-we-do">What We Do</a>
               <a href="/pages/workshops">Workshops</a>
-              <a href="#pricing">Pricing</a>
+              <a href="/pages/packages">Packages</a>
             </nav>
           </div>
 
@@ -37,9 +36,7 @@ const Footer: React.FC = () => {
             <h3 className={styles.heading}>Resources</h3>
             <ul className={styles.list}>
               <li><a href="#">Wellness Tips</a></li>
-              <li><a href="#">What We Offer</a></li>
-              <li><a href="#">Weight Loss Challenge</a></li>
-              <li><a href="#">About Us</a></li>
+              <li><a href="/#what-we-do">What We Offer</a></li>
             </ul>
           </div>
 
@@ -48,9 +45,8 @@ const Footer: React.FC = () => {
             <h3 className={styles.heading}>Support</h3>
             <ul className={styles.list}>
               <li><a href="#">FAQs</a></li>
-              <li><a href="#">Contact us</a></li>
+              <li><a href="#contact-us">Contact us</a></li>
               <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Pricing</a></li>
             </ul>
           </div>
         </div>

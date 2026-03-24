@@ -3,15 +3,15 @@
   width: 100%;
   height: 100vh;
   min-height: 100vh;
-  background-image: url("/Lady-stretching.webp");
+  background-image: url("/ROI-section-bg.png");
   background-size: cover;
   background-position: center;
-  padding: 0 2rem 2rem 2rem; /* Remove top padding to push content up, keep sides/bottom */
+  padding: 0 2rem 2rem 2rem;
   display: flex;
   flex-direction: column;
 }
 
-/* Optional Overlay */
+/* Overlay */
 .section::before {
   content: "";
   position: absolute;
@@ -19,7 +19,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1); /* Slight tint if needed */
+  background: rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 4rem; /* Add internal padding for header clearance if needed, or adjust as per design */
+  padding-top: 4rem;
 }
 
 .header {
@@ -51,7 +51,7 @@
 }
 
 .highlight {
-  color: var(--color-secondary); /* Light Green */
+  color: var(--color-secondary);
 }
 
 .intro {
@@ -72,29 +72,23 @@
 
 .card {
   background-color: #ffffff;
-  padding: 1.25rem;
+  padding: 1.5rem 1.25rem 1.25rem;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   transition: transform 0.2s;
 }
 
-.cardIcon {
-  width: 45px;
-  height: 45px;
-  background-color: #a8d26e34; /* Even lighter green background */
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.percentage {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 500;
   color: var(--color-secondary);
-}
-
-.cardIcon svg {
-  width: 24px;
-  height: 24px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: -0.4rem;
+  margin-top: 1rem;
 }
 
 .cardTitle {
@@ -104,6 +98,9 @@
   color: rgba(0, 0, 0, 1);
   letter-spacing: -0.02em;
   margin-bottom: -1.5rem;
+  min-height: 2.5em;
+  display: flex;
+  align-items: flex-end;
 }
 
 .cardText {
@@ -150,12 +147,6 @@
     font-size: 1rem;
     max-width: 100%;
   }
-
-  .cardIcon {
-    margin-bottom: 2rem;
-  }
-
-  /* Cards stack by default (1fr) */
 }
 
 @media (min-width: 768px) {

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import ScrollRestoration from "../components/ui/ScrollRestoration";
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ScrollRestoration />
         {children}
       </body>
     </html>

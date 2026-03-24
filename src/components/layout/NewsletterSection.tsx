@@ -3,7 +3,7 @@ import styles from './NewsletterSection.module.css';
 
 const NewsletterSection: React.FC = () => {
   return (
-    <section className={styles.section}>
+    <section id="contact-us" className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.heading}>
           ARE YOU READY TO<br/>

@@ -1,0 +1,263 @@
+.section {
+  padding: 8rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.section.dark {
+  background-color: var(--color-background-alt);
+}
+
+.container {
+  max-width: var(--spacing-container);
+  margin: 0 auto;
+}
+
+.heading {
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.06em;
+}
+
+.description {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 50%;
+  margin: 0 auto 1rem auto;
+}
+
+.description + .description {
+  margin-bottom: 4rem;
+}
+
+.description:last-of-type {
+  margin-bottom: 4rem;
+}
+
+/* Grid / Carousel */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dots {
+  display: none;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 53, 43, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #000000;
+}
+
+.section.dark .dot {
+  background-color: rgba(0, 53, 43, 0.2);
+}
+
+.section.dark .activeDot {
+  background-color: var(--color-primary);
+}
+
+/* Card — default: dark bg (used by light sections) */
+.card {
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 12px;
+  padding: 2.625rem 2.125rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Card — light bg (used by dark/beige sections) */
+.section.dark .card {
+  background-color: #ffffff;
+  border: none;
+}
+
+.cardHeader {
+  margin-bottom: 1.5rem;
+}
+
+.tierName {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.section.dark .tierName {
+  color: var(--color-primary);
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: 0.15rem;
+}
+
+.priceAlt {
+  font-family: var(--font-body);
+  font-size: 1.35rem;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.includes {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.section.dark .includes {
+  color: #666;
+  border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.pointsList {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.section.dark .pointsList {
+  color: #333;
+}
+
+.pointsList li {
+  margin-bottom: 0.4rem;
+}
+
+.bestFor {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.section.dark .bestFor {
+  color: #333;
+}
+
+.bestForLabel {
+  font-weight: 700;
+}
+
+.enquireButton {
+  display: inline-block;
+  background-color: var(--color-background);
+  color: #000000;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.9rem 2.5rem;
+  border-radius: 9999px;
+  text-align: center;
+  transition: all 0.2s ease;
+  align-self: center;
+  text-decoration: none;
+  margin-top: 0.35rem;
+}
+
+.section.dark .enquireButton {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.enquireButton:hover {
+  filter: brightness(0.92);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .heading {
+    font-size: 5rem;
+  }
+
+  .description {
+    max-width: 80%;
+  }
+
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    scroll-snap-align: center;
+    flex: 0 0 75%;
+    min-width: 0;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .card {
+    flex: 0 0 85%;
+  }
+}

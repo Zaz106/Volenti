@@ -5,7 +5,7 @@ const WorkshopsHero: React.FC = () => {
   return (
     <section className={styles.hero}>
       <img 
-        src="/Workshops - bg.png" 
+        src="/Wellness-section-bg.png" 
         alt="Wellness Workshops Group" 
         className={styles.image}
       />

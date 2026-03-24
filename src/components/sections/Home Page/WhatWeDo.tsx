@@ -1,7 +1,13 @@
-import React from "react";
+"use client";
+
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import styles from "./WhatWeDo.module.css";
 
 const WhatWeDo: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [isCarousel, setIsCarousel] = useState(false);
+
   const items = [
     {
       id: 1,
@@ -23,19 +29,53 @@ const WhatWeDo: React.FC = () => {
     },
   ];
 
+  useEffect(() => {
+    const checkLayout = () => {
+      setIsCarousel(window.innerWidth < 1024);
+    };
+    checkLayout();
+    window.addEventListener("resize", checkLayout);
+    return () => window.removeEventListener("resize", checkLayout);
+  }, []);
+
+  const handleScroll = useCallback(() => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollWidth = container.scrollWidth - container.clientWidth;
+    if (scrollWidth <= 0) return;
+    const progress = container.scrollLeft / scrollWidth;
+    const index = Math.round(progress * (items.length - 1));
+    setActiveIndex(Math.min(Math.max(index, 0), items.length - 1));
+  }, [items.length]);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || !isCarousel) return;
+    container.addEventListener("scroll", handleScroll, { passive: true });
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [handleScroll, isCarousel]);
+
+  const scrollToCard = (index: number) => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollWidth = container.scrollWidth - container.clientWidth;
+    const targetScroll = (index / (items.length - 1)) * scrollWidth;
+    container.scrollTo({ left: targetScroll, behavior: "smooth" });
+  };
+
   return (
     <section id="what-we-do" className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.heading}>What We Do</h2>
 
         <p className={styles.text}>
-          Volenti comes from the Latin for "to be willing," and it reflects the
-          mindset I ask of myself, my staff and my clients. It's about being
+          Volenti comes from the Latin for &quot;to be willing,&quot; and it reflects the
+          mindset I ask of myself, my staff and my clients. It&apos;s about being
           willing to learn, to change, to take ownership of your well-being, and
           to pursue excellence before shortcuts.
         </p>
 
-        <div className={styles.grid}>
+        <div className={styles.grid} ref={scrollRef}>
           {items.map((item) => (
             <div key={item.id} className={styles.card}>
               <img
@@ -51,8 +91,21 @@ const WhatWeDo: React.FC = () => {
           ))}
         </div>
 
+        {isCarousel && (
+          <div className={styles.dots}>
+            {items.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === activeIndex ? styles.activeDot : ""}`}
+                onClick={() => scrollToCard(i)}
+                aria-label={`Go to card ${i + 1}`}
+              />
+            ))}
+          </div>
+        )}
+
         <div className={styles.buttonGroup}>
-          <a href="#view-more" className={styles.button}>
+          <a href="/pages/packages" className={styles.button}>
             View Packages
           </a>
         </div>

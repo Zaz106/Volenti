@@ -1,6 +1,6 @@
 .section {
-  background-color: var(--color-background-alt); /* Light Beige */
-  padding: 5rem 1.5rem;
+  background-color: var(--color-background-alt);
+  padding: 8rem 2rem;
   text-align: center;
 }
 
@@ -10,47 +10,62 @@
 }
 
 .heading {
-  color: var(--color-accent); /* Orange */
+  color: var(--color-primary);
   font-family: var(--font-heading);
-  font-size: var(--text-h1);
-  font-weight: 900;
-  text-transform: uppercase;
+  font-size: 8rem;
+  font-weight: 500;
   margin-bottom: 2rem;
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.06em;
 }
 
 .description {
   font-family: var(--font-body);
   color: var(--color-text-main);
-  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 50%;
   margin: 0 auto 4rem auto;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.dots {
+  display: none;
 }
 
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(0, 53, 43, 0.25);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #000000;
 }
 
 .card {
-  background-color: var(--color-primary); /* Dark Green */
+  background-color: var(--color-primary);
   color: var(--color-text-light);
   padding: 2rem;
   text-align: left;
   display: flex;
   flex-direction: column;
+  border-radius: 8px;
+  max-width: 350px;
+  min-height: 500px;
+  width: 100%;
 }
 
 .cardHeader {
@@ -58,23 +73,15 @@
   margin-bottom: 1.5rem;
 }
 
-.logo {
-  height: 50px;
-  width: auto;
-  margin-bottom: 1rem;
-   /* If the logo image is dark, filter it to be light green or white if needed, 
-      but assuming png is correct color */
-}
-
 .cardTitle {
-  color: var(--color-accent); /* Orange */
+  color: var(--color-secondary);
   font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
   font-size: 1.1rem;
-  min-height: 3em; /* Align titles */
+  min-height: 3em;
   display: flex;
-  align-items: flex-end; /* Align bottom */
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -84,7 +91,7 @@
   line-height: 1.5;
   margin-bottom: 2rem;
   padding-left: 1.2rem;
-  flex-grow: 1; /* Push ROI to bottom */
+  flex-grow: 1;
 }
 
 .cardList li {
@@ -93,12 +100,12 @@
 
 .roiSection {
   margin-top: auto;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1rem;
 }
 
 .roiTitle {
-  color: var(--color-accent);
+  color: var(--color-secondary);
   font-family: var(--font-heading);
   font-weight: 700;
   text-transform: uppercase;
@@ -111,4 +118,68 @@
   font-size: 0.8rem;
   color: var(--color-text-light);
   opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .heading {
+    font-size: 5rem;
+  }
+
+  .description {
+    max-width: 80%;
+  }
+
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+    gap: 1rem;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    scroll-snap-align: start;
+    flex: 0 0 calc(50% - 0.5rem);
+    min-width: 0;
+    max-width: none;
+    min-height: 500px;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem;
+  }
+
+  .heading {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .card {
+    flex: 0 0 85%;
+    min-width: 0;
+    max-width: none;
+  }
 }
