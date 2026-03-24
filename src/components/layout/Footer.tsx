@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           <div className={styles.column}>
             <h3 className={styles.heading}>Resources</h3>
             <ul className={styles.list}>
-              <li><a href="#">Wellness Tips</a></li>
+              <li><a href="https://www.instagram.com/volenti_fitness">Wellness Tips</a></li>
               <li><a href="/#what-we-do">What We Offer</a></li>
             </ul>
           </div>
