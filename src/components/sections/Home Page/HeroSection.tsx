@@ -4,11 +4,12 @@ import styles from './HeroSection.module.css';
 const HeroSection: React.FC = () => {
   return (
     <section id="home" className={styles.hero}>
-      <video 
-        autoPlay 
-        muted 
-        loop 
-        playsInline 
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/Hero-section%20-%20bg.webp"
         className={styles.backgroundVideo}
       >
         <source src="/Greyscale_Gym_Walkthrough_Video_Generated.mp4" type="video/mp4" />

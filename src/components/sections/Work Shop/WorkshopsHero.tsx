@@ -6,7 +6,7 @@ const WorkshopsHero: React.FC = () => {
   return (
     <section className={styles.hero}>
       <Image
-        src="/Wellness-section-bg.png"
+        src="/Wellness-section-bg.webp"
         alt="Group participating in a Volenti wellness workshop"
         fill
         priority

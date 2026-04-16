@@ -6,7 +6,7 @@ const PackagesHero: React.FC = () => {
   return (
     <section className={styles.hero}>
       <Image
-        src="/Packages-section-bg.png"
+        src="/Packages-section-bg.webp"
         alt="Volenti personalised monthly training packages"
         fill
         priority
