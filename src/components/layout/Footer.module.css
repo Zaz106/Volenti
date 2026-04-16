@@ -154,16 +154,23 @@
   }
 }
 
-.branding {
-  display: flex;
-  align-items: center;
-  /* gap: 0.5rem; */
-  margin-top: 2rem;
-  opacity: 0.9;
+.credit {
+  text-align: center;
+  padding-top: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.4);
 }
 
-.branding img {
-  height: 3rem;
+.credit a {
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.credit a:hover {
+  color: rgba(0, 0, 0, 0.85);
 }
 
 @media (min-width: 768px) {

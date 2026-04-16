@@ -1,8 +1,10 @@
-import React from 'react';
-import styles from './Footer.module.css';
-import Logo from './Logo';
+import React from "react";
+import styles from "./Footer.module.css";
+import Logo from "./Logo";
 
 const Footer: React.FC = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -10,7 +12,7 @@ const Footer: React.FC = () => {
           {/* Column 1: Logo & Nav */}
           <div className={styles.column}>
             <div className={styles.logoWrapper}>
-              <Logo color="#a3cf83" /> {/* Light Green Logo as per image usually, or green */}
+              <Logo color="#a3cf83" />
             </div>
             <nav className={styles.navLinks}>
               <a href="/">Home</a>
@@ -24,7 +26,7 @@ const Footer: React.FC = () => {
           <div className={styles.column}>
             <p className={styles.contactIntro}>Have any questions or feedback? Reach out below</p>
             <a href="mailto:Leo@volenti.co.za" className={styles.emailLink}>Leo@volenti.co.za</a>
-            
+
             <div className={styles.phoneGroup}>
               <p className={styles.label}>Give us a call</p>
               <a href="tel:+27671096025" className={styles.phoneLink}>+27 67 109 6025</a>
@@ -35,7 +37,7 @@ const Footer: React.FC = () => {
           <div className={styles.column}>
             <h3 className={styles.heading}>Resources</h3>
             <ul className={styles.list}>
-              <li><a href="https://www.instagram.com/volenti_fitness">Wellness Tips</a></li>
+              <li><a href="https://www.instagram.com/volenti_fitness" target="_blank" rel="noopener noreferrer">Wellness Tips</a></li>
               <li><a href="/#what-we-do">What We Offer</a></li>
             </ul>
           </div>
@@ -52,11 +54,22 @@ const Footer: React.FC = () => {
         </div>
 
         <div className={styles.bottom}>
-          <p className={styles.copyright}>Copyright 2026. All Rights Reserved</p>
+          <p className={styles.copyright}>Copyright {year}. All Rights Reserved</p>
           <div className={styles.legal}>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms and Conditions</a>
+            <a href="/pages/legal">Privacy Policy</a>
+            <a href="/pages/legal">Terms and Conditions</a>
           </div>
+        </div>
+
+        <div className={styles.credit}>
+          Designed &amp; maintained by{" "}
+          <a
+            href="https://www.sixfootdesignco.co.za"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Six Foot Design Co
+          </a>
         </div>
       </div>
     </footer>

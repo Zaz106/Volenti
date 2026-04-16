@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Volenti — Website
 
-## Getting Started
+Marketing and information website for **Volenti**, a wellness, fitness, and lifestyle coaching brand based in South Africa.
+![alt text](image.png)
 
-First, run the development server:
+## Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 15 (App Router)
+- **Language:** TypeScript
+- **Styling:** CSS Modules + CSS custom properties
+- **Fonts:** Montserrat & Open Sans via `next/font/google` (self-hosted, no render-blocking requests)
+- **Email:** Resend API
+- **Deployment:** Vercel
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home — hero, motto, coach message, what we do, CTA, newsletter |
+| `/pages/workshops` | Wellness workshops — overview, stats, ROI, pricing & PDF download |
+| `/pages/packages` | Monthly training packages — General Fitness, Sports Conditioning, Occupational Conditioning |
+| `/pages/legal` | Privacy Policy & Terms and Conditions |
+
+## Key Features
+
+- Responsive across all breakpoints (360px → 1600px+)
+- Newsletter signup — sends confirmation email to subscriber and notification to admin via Resend
+- Rate limiting, honeypot, and bot detection on all API routes
+- Security headers (CSP, HSTS, X-Frame-Options, COOP) in `next.config.ts`
+- Full SEO setup — per-page metadata, Open Graph, canonical URLs, sitemap, robots.txt
+- Workshop pricing PDF available for direct download from `/public/assests/`
+
+## Environment Variables
+
+Create a `.env.local` file with:
+
+```
+RESEND_API_KEY=
+BUSINESS_EMAIL=
+FROM_EMAIL=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000).

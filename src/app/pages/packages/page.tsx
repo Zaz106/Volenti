@@ -1,4 +1,21 @@
+import type { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title: "Training Packages",
+  description:
+    "Explore Volenti's personalised training packages — General Fitness, Sports Conditioning, and Occupational Conditioning programs tailored to your goals and lifestyle.",
+  openGraph: {
+    title: "Training Packages | Volenti",
+    description:
+      "Personalised General Fitness, Sports Conditioning, and Occupational Conditioning packages for individuals and professionals.",
+    url: "https://www.volenti.co.za/pages/packages",
+    images: [{ url: "/og-packages.png", width: 1200, height: 630, alt: "Volenti Training Packages" }],
+  },
+  alternates: {
+    canonical: "https://www.volenti.co.za/pages/packages",
+  },
+};
 import Navbar from "../../../components/layout/Navbar";
 import PackagesHero from "../../../components/sections/Packages/PackagesHero";
 import PackageTierSection from "../../../components/sections/Packages/PackageTierSection";

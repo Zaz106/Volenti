@@ -80,7 +80,11 @@ const WorkshopPricing: React.FC = () => {
                 ))}
               </div>
 
-              <a href="#" className={styles.downloadButton}>
+              <a
+                href="/assests/Wellness Packages.pdf"
+                download="Volenti Workshop Info Sheet.pdf"
+                className={styles.downloadButton}
+              >
                 Download Info Sheet
               </a>
             </div>

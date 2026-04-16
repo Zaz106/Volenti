@@ -1,57 +1,32 @@
+/* ─── Section & Container ────────────────────────────────────────────────── */
 .section {
   padding: 8rem 2rem;
-  background-color: rgba(255, 255, 255, 1); /* Beige */
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .container {
   width: 100%;
-  max-width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
+/* ─── Heading ────────────────────────────────────────────────────────────── */
 .heading {
   color: var(--color-primary);
   font-family: var(--font-heading);
   font-size: 8.5rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 2rem;
   line-height: 1.1;
   letter-spacing: -0.06em;
 }
 
-@media (max-width: 1024px) {
-  .section {
-    padding: 6rem 2rem;
-  }
-
-  .heading {
-    font-size: 5rem !important; /* Override inline or ID specificity if any */
-  }
-
-  .text {
-    max-width: 80% !important;
-    font-size: 1rem !important;
-  }
-}
-
-@media (max-width: 768px) {
-  .section {
-    padding: 4rem 1.5rem;
-  }
-
-  .heading {
-    font-size: 4rem !important;
-  }
-
-  .text {
-    max-width: 100% !important;
-    font-size: 1rem !important;
-  }
-}
-
+/* ─── Body paragraph ─────────────────────────────────────────────────────── */
 .text {
   color: #000;
   font-family: var(--font-body);
@@ -61,6 +36,29 @@
   max-width: 50%;
 }
 
+/* ─── Heading + text responsive (mirrors LetsGrowSection exactly) ─────────── */
+@media (max-width: 1024px) {
+  .heading {
+    font-size: 5rem;
+  }
+
+  .text {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 4rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+/* ─── Grid ───────────────────────────────────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -69,6 +67,7 @@
   margin-bottom: 2rem;
 }
 
+/* ─── Carousel dots ──────────────────────────────────────────────────────── */
 .dots {
   display: none;
 }
@@ -88,6 +87,7 @@
   background-color: #000000;
 }
 
+/* ─── Card ───────────────────────────────────────────────────────────────── */
 .card {
   position: relative;
   border-radius: 12px;
@@ -136,6 +136,7 @@
   line-height: 1.4;
 }
 
+/* ─── Button ─────────────────────────────────────────────────────────────── */
 .button {
   display: inline-block;
   background-color: var(--color-primary);
@@ -154,7 +155,32 @@
   background-color: #00352bec;
 }
 
-@media (max-width: 1023px) {
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS — card content only, scaled from 2rem desktop baseline
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Desktop grid: 3 columns (≥ 1024px) ────────────────────────────────── */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ─── Tablet landscape: 768–1023px  (card ratio 0.875) ──────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section {
+    padding: 6rem 2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.75rem;
+  }
+
+  .cardDesc {
+    font-size: 0.95rem;
+  }
+
+  /* Carousel layout */
   .grid {
     display: flex;
     overflow-x: auto;
@@ -171,7 +197,7 @@
 
   .card {
     scroll-snap-align: center;
-    flex: 0 0 75%;
+    flex: 0 0 70%;
     min-width: 0;
     aspect-ratio: 3/4;
   }
@@ -184,18 +210,137 @@
   }
 }
 
-@media (max-width: 768px) {
+/* ─── Tablet portrait: 480–767px  (card ratio 0.65) ─────────────────────── */
+@media (min-width: 480px) and (max-width: 767px) {
   .section {
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+
+  .cardDesc {
+    font-size: 0.875rem;
+  }
+
+  /* Carousel layout */
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
   }
 
   .card {
-    flex: 0 0 85%;
+    scroll-snap-align: center;
+    flex: 0 0 80%;
+    min-width: 0;
+    aspect-ratio: 3/4;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    margin-top: -0.75rem;
   }
 }
 
-@media (min-width: 1024px) {
+/* ─── Large mobile: 424–479px  (card ratio 0.55) ────────────────────────── */
+@media (min-width: 424px) and (max-width: 479px) {
+  .section {
+    padding: 4rem 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardDesc {
+    font-size: 0.85rem;
+  }
+
+  /* Carousel layout */
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    scroll-snap-align: center;
+    flex: 0 0 85%;
+    min-width: 0;
+    aspect-ratio: 3/4;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    margin-top: -0.75rem;
+  }
+}
+
+/* ─── Small mobile: ≤ 423px  (card ratio 0.5) ───────────────────────────── */
+@media (max-width: 423px) {
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1rem;
+  }
+
+  .cardDesc {
+    font-size: 0.8rem;
+  }
+
+  /* Carousel layout */
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    scroll-snap-align: center;
+    flex: 0 0 90%;
+    min-width: 0;
+    aspect-ratio: 3/4;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+    margin-top: -0.75rem;
   }
 }

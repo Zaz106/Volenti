@@ -4,7 +4,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import Logo from "./Logo";
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  forceScrolled?: boolean;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ forceScrolled = false }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -93,13 +97,15 @@ const Navbar: React.FC = () => {
     { label: "Contact us", href: "#contact-us" },
   ];
 
+  const scrolled = forceScrolled || isScrolled;
+
   return (
     <nav
-      className={`${styles.navbar} ${isScrolled || isOpen ? styles.scrolled : styles.transparent} ${!isVisible && !isOpen ? styles.hidden : ""}`}
+      className={`${styles.navbar} ${scrolled || isOpen ? styles.scrolled : styles.transparent} ${!isVisible && !isOpen ? styles.hidden : ""}`}
     >
-      <a href="/" className={styles.logoLink}>
+      <a href="/" className={styles.logoLink} aria-label="Volenti – go to homepage">
         <Logo
-          color={isScrolled || isOpen ? "var(--color-secondary)" : "white"}
+          color={scrolled || isOpen ? "var(--color-secondary)" : "white"}
           className={styles.logo}
         />
       </a>

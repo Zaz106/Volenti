@@ -1,12 +1,17 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./PackagesHero.module.css";
 
 const PackagesHero: React.FC = () => {
   return (
     <section className={styles.hero}>
-      <img
+      <Image
         src="/Packages-section-bg.png"
-        alt="Monthly Packages"
+        alt="Volenti personalised monthly training packages"
+        fill
+        priority
+        sizes="100vw"
+        style={{ objectFit: "cover" }}
         className={styles.image}
       />
       <div className={styles.overlay}></div>

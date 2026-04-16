@@ -1,12 +1,17 @@
-import React from 'react';
-import styles from './WorkshopsHero.module.css';
+import React from "react";
+import Image from "next/image";
+import styles from "./WorkshopsHero.module.css";
 
 const WorkshopsHero: React.FC = () => {
   return (
     <section className={styles.hero}>
-      <img 
-        src="/Wellness-section-bg.png" 
-        alt="Wellness Workshops Group" 
+      <Image
+        src="/Wellness-section-bg.png"
+        alt="Group participating in a Volenti wellness workshop"
+        fill
+        priority
+        sizes="100vw"
+        style={{ objectFit: "cover" }}
         className={styles.image}
       />
       <div className={styles.overlay}></div>

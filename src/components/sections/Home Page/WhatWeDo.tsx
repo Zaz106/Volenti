@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import styles from "./WhatWeDo.module.css";
 
 const WhatWeDo: React.FC = () => {
@@ -78,9 +79,12 @@ const WhatWeDo: React.FC = () => {
         <div className={styles.grid} ref={scrollRef}>
           {items.map((item) => (
             <div key={item.id} className={styles.card}>
-              <img
+              <Image
                 src={item.image}
                 alt={item.title}
+                fill
+                sizes="(max-width: 1023px) 85vw, 33vw"
+                style={{ objectFit: "cover" }}
                 className={styles.cardImage}
               />
               <div className={styles.cardOverlay}>
