@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Volenti | Wellness, Fitness & Lifestyle Coaching",
   description:
     "Volenti offers science-backed personal training, sports conditioning, and corporate wellness workshops in South Africa. Start your journey to sustainable health today.",
+  verification: {
+    google: "mGYcvskSSzV4snr4CGR7Mt_QjxB3yX2sPedW57QTDdI",
+  },
   openGraph: {
     title: "Volenti | Wellness, Fitness & Lifestyle Coaching",
     description:
