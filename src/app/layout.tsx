@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
 import ScrollRestoration from "../components/ui/ScrollRestoration";
+import { Analytics } from "@vercel/analytics/next"
 
 // Self-hosted at build time — no external font requests at runtime
 const montserrat = Montserrat({
@@ -48,6 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}>
       <body>
+        <Analytics />
         <ScrollRestoration />
         {children}
       </body>
