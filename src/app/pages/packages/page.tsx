@@ -137,22 +137,6 @@ const occupationalConditioningCards = [
       "Professionals who need consistent physical strength while working.",
   },
   {
-    tier: "Tier 2",
-    price: "$320 / R 5100 p/m",
-    priceAlt: "",
-    includes: "Everything in Tier 1, plus:",
-    points: [
-      "Bi-weekly operational review",
-      "Fatigue management integrated with shift patterns",
-      "Load carriage & equipment-specific conditioning",
-      "Grip strength & rotational force development",
-      "Conditioning under elevated heart rate",
-      "8h response window",
-    ],
-    bestFor:
-      "Professionals that have high physical demands in their careers.",
-  },
-  {
     tier: "Tier 3",
     price: "$250 / R 4000 p/m",
     priceAlt: "",
@@ -168,6 +152,22 @@ const occupationalConditioningCards = [
     bestFor:
       "Professionals that can't afford distraction under high fatigue decision making.",
   },
+    {
+    tier: "Tier 2",
+    price: "$320 / R 5100 p/m",
+    priceAlt: "",
+    includes: "Everything in Tier 1, plus:",
+    points: [
+      "Bi-weekly operational review",
+      "Fatigue management integrated with shift patterns",
+      "Load carriage & equipment-specific conditioning",
+      "Grip strength & rotational force development",
+      "Conditioning under elevated heart rate",
+      "8h response window",
+    ],
+    bestFor:
+      "Professionals that have high physical demands in their careers.",
+  }
 ];
 
 export default function PackagesPage() {
