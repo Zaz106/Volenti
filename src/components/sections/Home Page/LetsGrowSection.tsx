@@ -10,10 +10,9 @@ const LetsGrowSection: React.FC = () => {
         </h2>
 
         <p className={styles.text}>
-          Volenti comes from the Latin for "to be willing," and it reflects the
-          mindset I ask of myself, my staff and my clients. It's about being
-          willing to learn, to change, to take ownership of your well-being, and
-          to pursue excellence before shortcuts.
+          Every meaningful result starts with a decision to begin. Whether you&apos;re pursuing
+          personal fitness, competitive performance, or team-wide wellbeing — the right support
+          makes all the difference. Reach out and let&apos;s build something that lasts.
         </p>
 
         <a href="#contact-us" className={styles.button}>

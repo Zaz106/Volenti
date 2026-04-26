@@ -70,10 +70,9 @@ const WhatWeDo: React.FC = () => {
         <h2 className={styles.heading}>What We Do</h2>
 
         <p className={styles.text}>
-          Volenti comes from the Latin for &quot;to be willing,&quot; and it reflects the
-          mindset I ask of myself, my staff and my clients. It&apos;s about being
-          willing to learn, to change, to take ownership of your well-being, and
-          to pursue excellence before shortcuts.
+          We offer three distinct service areas, each built around a specific goal and a single
+          guiding principle: sustainable progress matters more than short-term results. Choose the
+          path that fits your life and we&apos;ll build a programme around it.
         </p>
 
         <div className={styles.grid} ref={scrollRef}>
