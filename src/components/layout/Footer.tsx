@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
 
             <div className={styles.phoneGroup}>
               <p className={styles.label}>Give us a call</p>
-              <a href="tel:+27671096025" className={styles.phoneLink}>+27 67 109 6025</a>
+              <a href="tel:+27693134060" className={styles.phoneLink}>+27 69 313 4060</a>
             </div>
           </div>
 

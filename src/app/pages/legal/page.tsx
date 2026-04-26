@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.volenti.co.za/pages/legal",
   },
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 };
 
 export default function LegalPage() {
@@ -132,8 +132,8 @@ export default function LegalPage() {
                 Leo@volenti.co.za
               </a>{" "}
               or call{" "}
-              <a href="tel:+27671096025" className={styles.link}>
-                +27 67 109 6025
+              <a href="tel:+27693134060" className={styles.link}>
+                +27 69 313 4060
               </a>
               .
             </p>

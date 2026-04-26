@@ -107,7 +107,7 @@ const PackageTierSection: React.FC<PackageTierSectionProps> = ({
               </div>
 
               <a
-                href={`https://wa.me/27671096025?text=${encodeURIComponent(`Hi, I'm interested in the ${heading} – ${card.tier} package (${card.price}). Could you please provide more information?`)}`}
+                href={`https://wa.me/27693134060?text=${encodeURIComponent(`Hi, I'm interested in the ${heading} – ${card.tier} package (${card.price}). Could you please provide more information?`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.enquireButton}

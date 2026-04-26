@@ -35,6 +35,12 @@ export const metadata: Metadata = {
     locale: "en_ZA",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
+  icons: {
+    apple: "/apple-touch-icon.png",
+  },
   robots: {
     index: true,
     follow: true,

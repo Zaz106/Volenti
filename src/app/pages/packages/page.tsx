@@ -4,13 +4,20 @@ import React from "react";
 export const metadata: Metadata = {
   title: "Training Packages",
   description:
-    "Explore Volenti's personalised training packages — General Fitness, Sports Conditioning, and Occupational Conditioning programs tailored to your goals and lifestyle.",
+    "Explore Volenti's personalised training packages — General Fitness, Sports Conditioning, and Occupational Conditioning programs tailored to your goals.",
   openGraph: {
     title: "Training Packages | Volenti",
     description:
       "Personalised General Fitness, Sports Conditioning, and Occupational Conditioning packages for individuals and professionals.",
     url: "https://www.volenti.co.za/pages/packages",
     images: [{ url: "/og-packages.png", width: 1200, height: 630, alt: "Volenti Training Packages" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Training Packages | Volenti",
+    description:
+      "Personalised General Fitness, Sports Conditioning, and Occupational Conditioning packages for individuals and professionals.",
+    images: ["/og-packages.png"],
   },
   alternates: {
     canonical: "https://www.volenti.co.za/pages/packages",
@@ -171,8 +178,47 @@ const occupationalConditioningCards = [
 ];
 
 export default function PackagesPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.volenti.co.za/pages/packages#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.volenti.co.za/",
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Training Packages",
+            "item": "https://www.volenti.co.za/pages/packages",
+          },
+        ],
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.volenti.co.za/pages/packages#webpage",
+        "url": "https://www.volenti.co.za/pages/packages",
+        "name": "Training Packages | Volenti",
+        "description":
+          "Personalised General Fitness, Sports Conditioning, and Occupational Conditioning packages for individuals and professionals.",
+        "isPartOf": { "@id": "https://www.volenti.co.za/#website" },
+        "breadcrumb": { "@id": "https://www.volenti.co.za/pages/packages#breadcrumb" },
+        "dateModified": "2026-04-26",
+      },
+    ],
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Navbar />
       <PackagesHero />
 
