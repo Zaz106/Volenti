@@ -15,7 +15,11 @@ const PackagesHero: React.FC = () => {
         className={styles.image}
       />
       <div className={styles.overlay}></div>
-      <h1 className={styles.title}>MONTHLY PACKAGES</h1>
+      <h1 className={styles.title}>
+        MONTHLY PACKAGES
+        <br />
+        FOR <span className={styles.accent}>UK ONLINE COACHING</span>
+      </h1>
     </section>
   );
 };

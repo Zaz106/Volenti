@@ -9,7 +9,7 @@ interface TierCard {
   priceAlt: string;
   includes?: string;
   points: string[];
-  bestFor: string;
+  bestFor?: string;
 }
 
 interface PackageTierSectionProps {
@@ -17,7 +17,7 @@ interface PackageTierSectionProps {
   description: string;
   descriptionSecondary?: string;
   cards: TierCard[];
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "accent";
 }
 
 const PackageTierSection: React.FC<PackageTierSectionProps> = ({
@@ -71,7 +71,12 @@ const PackageTierSection: React.FC<PackageTierSectionProps> = ({
     container.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
   };
 
-  const sectionClass = variant === "dark" ? `${styles.section} ${styles.dark}` : styles.section;
+  const sectionClass =
+    variant === "dark"
+      ? `${styles.section} ${styles.dark}`
+      : variant === "accent"
+      ? `${styles.section} ${styles.accent}`
+      : styles.section;
 
   return (
     <section className={sectionClass}>
@@ -101,10 +106,12 @@ const PackageTierSection: React.FC<PackageTierSectionProps> = ({
                 ))}
               </ul>
 
-              <div className={styles.bestFor}>
-                <span className={styles.bestForLabel}>Best for: </span>
-                {card.bestFor}
-              </div>
+              {card.bestFor && (
+                <div className={styles.bestFor}>
+                  <span className={styles.bestForLabel}>Best for: </span>
+                  {card.bestFor}
+                </div>
+              )}
 
               <a
                 href={`https://wa.me/27693134060?text=${encodeURIComponent(`Hi, I'm interested in the ${heading} – ${card.tier} package (${card.price}). Could you please provide more information?`)}`}

@@ -12,19 +12,19 @@ const WhatWeDo: React.FC = () => {
   const items = [
     {
       id: 1,
-      image: "/What We Do - 1.webp",
+      image: "/What We Do - 1.png",
       title: "General Fitness Programs",
       text: "General Fitness Programs are designed to build a strong, balanced foundation — improving strength, endurance, mobility, and overall wellbeing.",
     },
     {
       id: 2,
-      image: "/What We Do - 2.webp",
+      image: "/What We Do - 2.jpg",
       title: "Sports Conditioning",
       text: "Sports Conditioning programs are built to help you perform at your optimal level — developing strength, speed, agility, and endurance specific to your sport.",
     },
     {
       id: 3,
-      image: "/What We Do - 3.webp",
+      image: "/What We Do - 3.png",
       title: "Occupational Conditioning",
       text: "Occupational Conditioning programs are designed to enhance performance in the workplace — building the strength, stamina, and resilience your role demands.",
     },
@@ -82,7 +82,7 @@ const WhatWeDo: React.FC = () => {
                 src={item.image}
                 alt={item.title}
                 fill
-                sizes="(max-width: 1023px) 85vw, 33vw"
+                sizes="(max-width: 1920px) 85vw, 33vw"
                 style={{ objectFit: "cover" }}
                 className={styles.cardImage}
               />

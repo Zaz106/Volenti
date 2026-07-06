@@ -43,6 +43,10 @@
   line-height: 1.1;
 }
 
+.accent {
+  color: var(--color-secondary);
+}
+
 @media (max-width: 768px) {
   .title {
     font-size: 3.5rem;

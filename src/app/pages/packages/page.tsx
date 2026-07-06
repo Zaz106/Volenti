@@ -29,152 +29,170 @@ import PackageTierSection from "../../../components/sections/Packages/PackageTie
 import NewsletterSection from "../../../components/layout/NewsletterSection";
 import Footer from "../../../components/layout/Footer";
 
+const directPersonalTrainingCards = [
+  {
+    tier: "Direct 1",
+    price: "£40 per session\n£40 per week\n£160 per month",
+    priceAlt: "",
+    points: [
+      "One on One",
+      "1 x 45 minute session a week / 4 a month",
+    ],
+  },
+  {
+    tier: "Direct 2",
+    price: "£35 per session\n£70 per week\n£280 per month",
+    priceAlt: "",
+    points: [
+      "One on One",
+      "2 x 45 minute session a week / 8 a month",
+    ],
+  },
+  {
+    tier: "Direct 3",
+    price: "£30 per session\n£90 per week\n£360 per month",
+    priceAlt: "",
+    points: [
+      "One on One",
+      "3 x 45 minute session a week / 12 a month",
+    ],
+  },
+];
+
 const generalFitnessCards = [
   {
-    tier: "Tier 1",
-    price: "$120 / R 1900 p/m",
+    tier: "Foundation",
+    price: "£99 Per Month",
     priceAlt: "",
     points: [
-      "Personalised monthly training program with progression",
-      "Movement pattern & imbalance analysis",
-      "Pre- & post-health preparation protocols",
-      "1 program adjustment per month",
-      "Training log & progress tracker",
-      "Basic nutrition structure (calorie & protein targets)",
-      "24h response window",
+      "Personalised monthly programme",
+      "Movement analysis",
+      "Progress tracker",
+      "Calorie/protein targets within scope",
+      "24h response window.",
     ],
     bestFor:
-      "People who want clear direction and accountability without high-touch coaching.",
+      "Someone who needs structure, a plan, and basic accountability.",
   },
   {
-    tier: "Tier 2",
-    price: "$180 / R 2900 p/m",
+    tier: "Progress",
+    price: "£149 Per Month",
     priceAlt: "",
-    includes: "Everything in Tier 1, plus:",
+    includes: "Everything in foundation, plus:",
     points: [
       "Bi-weekly check-in",
-      "Form reviews via video submissions",
-      "Monthly program adjustments based on progress",
-      "Basic conditioning protocols (fat loss / muscle gain specific)",
-      "8h response window",
+      "Video form reviews",
+      "Progress-based adjustments",
+      "8h response window.",
     ],
     bestFor:
-      "Clients who are serious about visible body composition change.",
+      "Someone serious about body composition, consistency, and form correction.",
   },
   {
-    tier: "Tier 3",
-    price: "$250 / R 4000 p/m",
+    tier: "Complete",
+    price: "$219 Per Month",
     priceAlt: "",
-    includes: "Everything in Tier 1 & 2, plus:",
+    includes: "Everything in progress, plus:",
     points: [
-      "Weekly check-in & accountability call",
-      "Full lifestyle adherence (sleep, stress, recovery systems)",
-      "Injury rehab integration",
-      "Dining out & travel protocols",
-      "Behavioural framework for habit change",
-      "3h priority response window",
+      "Weekly check-in,",
+      "Sleep/stress/recovery systems",
+      "Dining-out/travel protocols",
+      "Habit framework",
+      "Priority response.",
     ],
     bestFor:
-      "Clients who want structural change beyond just a training plan.",
+      "Someone who wants weekly accountability and lifestyle structure.",
   },
 ];
 
 const sportsConditioningCards = [
   {
-    tier: "Tier 1",
-    price: "$200 / R 3200 p/m",
+    tier: "Athlete Foundation",
+    price: "£169 Per Month",
     priceAlt: "",
     points: [
-      "Individualised monthly program with progression",
-      "Movement pattern & imbalance analysis",
-      "Pre- & post-match preparation protocols",
-      "GPS & IMU load management framework",
-      "1 Monthly conditioning strategy meeting",
-      "8h response window",
+      "Movement analysis",
+      "Pre/post-match protocols",
+      "Strategy meeting",
+      "Load awareness framework",
+      "8h response window.",
     ],
     bestFor:
-      "Athletes who want structure, oversight, and performance direction.",
+      "Youth, amateur, or developing athletes needing structure and load awareness.",
   },
   {
-    tier: "Tier 2",
-    price: "$300 / R 4800 p/m",
+    tier: "Competitive Athlete",
+    price: "£249 Per Month",
     priceAlt: "",
-    includes: "Everything in Tier 1, plus:",
     points: [
-      "Bi-monthly conditioning strategy meetings",
-      "Advanced micro-cycle adjustments",
+      "Bi-monthly strategy reviews",
+      "Micro-cycle adjustments",
       "In-season load redistribution",
-      "8h response window",
+      "Priority adjustment support.",
     ],
     bestFor:
-      "Competitive athletes with ongoing nutrition to tournament cycles.",
+      "Athletes in-season or preparing for trials, tournaments, or selection.",
   },
   {
-    tier: "Tier 3",
-    price: "$400 / R 6400 p/m",
+    tier: "High Performance",
+    price: "£329 Per Month",
     priceAlt: "",
     includes: "Everything in Tier 1 & 2, plus:",
     points: [
-      "Weekly conditioning strategy meetings",
-      "Real-time performance adjustments",
-      "Game-priority response window",
-      "1 Monthly session with performance psychologist",
-      "Periodisation frameworks + competition protocols",
+      "Weekly conditioning strategy review,",
+      "Competition-readiness planning",
+      "Warm-up/recovery protocols",
+      "Game-week load adjustment",
+      "Priority response.",
     ],
     bestFor:
-      "High performance athletes preparing for competition or selection.",
+      "Athletes needing weekly oversight, competition protocols, and rapid programming changes.",
   },
 ];
 
 const occupationalConditioningCards = [
   {
-    tier: "Tier 1",
-    price: "$220 / R 3500 p/m",
+    tier: "Operational Foundation",
+    price: "£179 Per Month",
     priceAlt: "",
     points: [
-      "Role-specific movement & load assessment",
-      "Monthly strength & conditioning program",
-      "Postural alignment & injury prevention protocols",
-      "Endurance recovery strategies",
-      "CNS fatigue awareness guide",
-      "Monthly operational readiness call",
-      "12h response window",
+      "Role-specific movement/load assessment",
+      "Monthly programme",
+      "Posture and injury-risk reduction protocols",
+      "CNS fatigue guide",
+      "Monthly readiness call.",
     ],
     bestFor:
-      "Professionals who need consistent physical strength while working.",
+      "Professionals with physically demanding work who need durability and structure.",
   },
   {
-    tier: "Tier 3",
-    price: "$250 / R 4000 p/m",
+    tier: "Operational Performance",
+    price: "£259 Per Month",
+    priceAlt: "",
+    points: [
+      "Bi-weekly operational review",
+      "Shift-pattern fatigue management",
+      "Load-carriage conditioning",
+      "Grip/rotation strength,",
+      "Conditioning under elevated heart rate.",
+    ],
+    bestFor:
+      "Shift workers, responders, security, trades, and high-output professionals.",
+  },
+  {
+    tier: "Operational Elite",
+    price: "£349 Per Month",
     priceAlt: "",
     includes: "Everything in Tier 1 & 2, plus:",
     points: [
-      "Weekly operational performance meeting",
-      "Stress inoculation conditioning protocols",
-      "Advanced recovery & nervous system regulation",
-      "Cognitive performance under fatigue protocols",
-      "1 monthly consult with performance psychologist",
-      "Priority 1-2h response window (business hours)",
+      "Weekly operational performance review",
+      "Fatigue management,",
+      "Nervous-system recovery strategies",
+      "Work-demand conditioning, and priority response.",
     ],
     bestFor:
-      "Professionals that can't afford distraction under high fatigue decision making.",
+      "High-demand professionals needing physical resilience, fatigue management, and readiness tracking.",
   },
-    {
-    tier: "Tier 2",
-    price: "$320 / R 5100 p/m",
-    priceAlt: "",
-    includes: "Everything in Tier 1, plus:",
-    points: [
-      "Bi-weekly operational review",
-      "Fatigue management integrated with shift patterns",
-      "Load carriage & equipment-specific conditioning",
-      "Grip strength & rotational force development",
-      "Conditioning under elevated heart rate",
-      "8h response window",
-    ],
-    bestFor:
-      "Professionals that have high physical demands in their careers.",
-  }
 ];
 
 export default function PackagesPage() {
@@ -221,6 +239,13 @@ export default function PackagesPage() {
       />
       <Navbar />
       <PackagesHero />
+
+      <PackageTierSection
+        heading="Direct Personal Training Sessions"
+        description="Designed clients an easy entry point to sessions before they compare the online coaching packages."
+        cards={directPersonalTrainingCards}
+        variant="accent"
+      />
 
       <PackageTierSection
         heading="General Fitness Programs"

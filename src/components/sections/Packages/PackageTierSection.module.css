@@ -76,6 +76,14 @@
   background-color: var(--color-primary);
 }
 
+.section.accent .dot {
+  background-color: rgba(0, 53, 43, 0.2);
+}
+
+.section.accent .activeDot {
+  background-color: var(--color-primary);
+}
+
 /* Card — default: dark bg (used by light sections) */
 .card {
   background-color: var(--color-primary);
@@ -94,6 +102,12 @@
   border: none;
 }
 
+/* Card — lime/green bg (used by the Direct Personal Training section) */
+.section.accent .card {
+  background-color: var(--color-secondary);
+  border: none;
+}
+
 .cardHeader {
   margin-bottom: 1.5rem;
 }
@@ -107,7 +121,8 @@
   margin-bottom: 0.5rem;
 }
 
-.section.dark .tierName {
+.section.dark .tierName,
+.section.accent .tierName {
   color: var(--color-primary);
 }
 
@@ -117,6 +132,11 @@
   font-weight: 700;
   color: var(--color-secondary);
   margin-bottom: 0.15rem;
+  white-space: pre-line;
+}
+
+.section.accent .price {
+  color: var(--color-primary);
 }
 
 .priceAlt {
@@ -124,6 +144,10 @@
   font-size: 1.35rem;
   color: var(--color-secondary);
   font-weight: 600;
+}
+
+.section.accent .priceAlt {
+  color: var(--color-primary);
 }
 
 .includes {
@@ -141,6 +165,11 @@
   border-bottom-color: rgba(0, 0, 0, 0.08);
 }
 
+.section.accent .includes {
+  color: rgba(0, 53, 43, 0.7);
+  border-bottom-color: rgba(0, 53, 43, 0.15);
+}
+
 .pointsList {
   font-family: var(--font-body);
   font-size: 0.8rem;
@@ -153,6 +182,10 @@
 
 .section.dark .pointsList {
   color: #333;
+}
+
+.section.accent .pointsList {
+  color: rgba(0, 53, 43, 0.9);
 }
 
 .pointsList li {
@@ -169,6 +202,10 @@
 
 .section.dark .bestFor {
   color: #333;
+}
+
+.section.accent .bestFor {
+  color: rgba(0, 53, 43, 0.85);
 }
 
 .bestForLabel {
@@ -194,6 +231,11 @@
 .section.dark .enquireButton {
   background-color: var(--color-primary);
   color: #ffffff;
+}
+
+.section.accent .enquireButton {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .enquireButton:hover {
