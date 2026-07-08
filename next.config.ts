@@ -57,6 +57,7 @@ const nextConfig: NextConfig = {
     // Adding 1536 lets Next.js serve a tighter fit for ~1477px viewports
     // instead of jumping straight to 1920px (saves ~23 KiB per Lighthouse)
     deviceSizes: [640, 750, 828, 1080, 1200, 1536, 1920, 2048, 3840],
+    qualities: [75, 90],
   },
   async headers() {
     return [

@@ -90,7 +90,7 @@ const generalFitnessCards = [
   },
   {
     tier: "Complete",
-    price: "$219 Per Month",
+    price: "£219 Per Month",
     priceAlt: "",
     includes: "Everything in progress, plus:",
     points: [
@@ -137,7 +137,6 @@ const sportsConditioningCards = [
     tier: "High Performance",
     price: "£329 Per Month",
     priceAlt: "",
-    includes: "Everything in Tier 1 & 2, plus:",
     points: [
       "Weekly conditioning strategy review,",
       "Competition-readiness planning",
@@ -183,7 +182,6 @@ const occupationalConditioningCards = [
     tier: "Operational Elite",
     price: "£349 Per Month",
     priceAlt: "",
-    includes: "Everything in Tier 1 & 2, plus:",
     points: [
       "Weekly operational performance review",
       "Fatigue management,",

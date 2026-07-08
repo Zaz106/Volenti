@@ -3,16 +3,18 @@
   width: 100%;
   height: 100vh;
   min-height: 100vh;
-  background-image: url("/Lady-stretching.webp");
-  background-size: cover;
-  background-position: center;
   padding: 0 2rem 2rem 2rem; /* Remove top padding to push content up, keep sides/bottom */
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  z-index: 0;
 }
 
 /* Optional Overlay */
-.section::before {
+.overlay {
   content: "";
   position: absolute;
   top: 0;

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import styles from "./PrioritySection.module.css";
 
 const PrioritySection: React.FC = () => {
@@ -79,6 +80,17 @@ const PrioritySection: React.FC = () => {
 
   return (
     <section className={styles.section}>
+      <Image
+        src="/Lady-stretching.webp"
+        alt=""
+        fill
+        priority
+        quality={90}
+        sizes="100vw"
+        style={{ objectFit: "cover" }}
+        className={styles.backgroundImage} 
+      />
+      <div className={styles.overlay} />
       <div className={styles.contentContainer}>
         <div className={styles.header}>
           <h2 className={styles.heading}>
